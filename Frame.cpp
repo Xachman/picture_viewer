@@ -6,17 +6,19 @@
 #include "Frame.h"
 #include "DropTarget.h"
 #include "FileList.h"
+#include "ImageFrame.h"
 #include <wx/wxprec.h>
 #include  <wx/wx.h>
 #include <wx/treectrl.h>
 #include <wx/dirctrl.h>
 #include <wx/dir.h>
 #include <wx/splitter.h>
+#include <wx/display.h>
 
 Frame::Frame(const wxString& title, const wxPoint& pos, const wxSize& size) : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
 	panel = new wxPanel(this, -1);
-
+	ImageFrame *iFrame = new ImageFrame(new wxDisplay());
 	wxMenu *menuFile = new wxMenu;	
 	menuFile->Append(ID_Hello, "&Hello...\tCtrl-H", "Help string shown in status bar for this menu");
 	menuFile->AppendSeparator();

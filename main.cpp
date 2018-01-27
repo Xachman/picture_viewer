@@ -5,8 +5,13 @@
 
 #include "Frame.h"
 #include "app.h"
+#include <wx/display.h>
+#include <iostream>
 
-
+/*
+ TODO:  use wxDisplay to get displays and use dropdown to select
+ 
+ */
 
 wxBEGIN_EVENT_TABLE(Frame, wxFrame)
 	EVT_MENU(ID_Hello, Frame::OnHello)

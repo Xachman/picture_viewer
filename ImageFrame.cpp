@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   ImageFrame.cpp
+ * Author: ziron
+ * 
+ * Created on January 26, 2018, 10:39 PM
+ */
+
+#include "ImageFrame.h"
+#include <wx/display.h>
+ImageFrame::ImageFrame(wxDisplay *display) : wxFrame(NULL, wxID_ANY, "Image", wxPoint(50,50), wxSize(450, 340)) {
+	this->Show(true);
+	this->ShowFullScreen(true);
+}
+
+ImageFrame::ImageFrame(const ImageFrame& orig) {
+}
+
+ImageFrame::~ImageFrame() {
+}
+
