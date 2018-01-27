@@ -15,16 +15,17 @@
 #define DROPTARGET_H
 #include <wx/wx.h>
 #include <wx/dnd.h>
-
+#include <wx/listctrl.h>
 
 class DropTarget: public wxFileDropTarget 
 {
 public:
-    DropTarget(wxTextCtrl *panel);
+    DropTarget(wxListCtrl *panel);
 	virtual bool OnDropFiles(wxCoord x, wxCoord y,
                              const wxArrayString& filenames) wxOVERRIDE;
+	DropTarget();
 	wxPanel *panel;
-	wxTextCtrl *textctrl;
+	wxListCtrl *owner;
     virtual ~DropTarget();
 private:
 

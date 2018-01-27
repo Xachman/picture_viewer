@@ -13,6 +13,9 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
 	EVT_MENU(wxID_EXIT, Frame::OnExit)
 	EVT_MENU(wxID_ABOUT, Frame::OnAbout)
 wxEND_EVENT_TABLE()
+wxBEGIN_EVENT_TABLE(FileList, wxListCtrl)
+	EVT_LIST_ITEM_SELECTED(LIST_CTRL, FileList::OnItemSelected)
+wxEND_EVENT_TABLE()
 wxIMPLEMENT_APP(App);
 
 

@@ -14,13 +14,16 @@
 #ifndef FRAME_H
 #define FRAME_H
 #include <wx/wx.h>
+#include "FileList.h"
 class Frame: public wxFrame 
 {
 public:
 	Frame(const wxString& title, const wxPoint& pos, const wxSize& size);
 	wxStaticText *label;
 	wxTextCtrl *textctrl;
-
+protected:
+	wxPanel *panel;
+	FileList *fileList;
 private:
 	void OnHello(wxCommandEvent& event);
 	void OnExit(wxCommandEvent& event);
