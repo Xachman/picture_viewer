@@ -13,12 +13,16 @@
 
 #ifndef IMAGEFRAME_H
 #define IMAGEFRAME_H
+#include "ImagePanel.h"
 #include <wx/wx.h>
 #include <wx/display.h>
+#include <string>
 class ImageFrame : public wxFrame {
 public:
     ImageFrame(wxDisplay *display);
     ImageFrame(const ImageFrame& orig);
+	ImagePanel * imagePanel;
+	void updateImage(std::string path);
     virtual ~ImageFrame();
 private:
 

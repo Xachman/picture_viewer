@@ -14,13 +14,32 @@
 #include "ImagePanel.h"
 #include <wx/wx.h>
 
-ImagePanel::ImagePanel(wxFrame* parent, wxString file, wxBitmapType format) {
-	image.LoadFile(file, 0, 0, format);
+ImagePanel::ImagePanel(wxFrame* parent, wxString file, wxBitmapType format) : wxPanel(parent) {
+	image.LoadFile(file, format);
 }
-
+void ImagePanel::loadFile(wxString file, wxBitmapType format) {
+	image.LoadFile(file, format);
+}
 ImagePanel::ImagePanel(const ImagePanel& orig) {
 }
 
 ImagePanel::~ImagePanel() {
 }
 
+void ImagePanel::paintEvent(wxPaintEvent & evt)
+{
+    // depending on your system you may need to look at double-buffered dcs
+    wxPaintDC dc(this);
+    render(dc);
+}
+void ImagePanel::paintNow()
+{
+    // depending on your system you may need to look at double-buffered dcs
+    wxClientDC dc(this);
+    render(dc);
+}
+
+void ImagePanel::render(wxDC&  dc)
+{
+    dc.DrawBitmap( image, 0, 0, false );
+}

@@ -29,7 +29,7 @@ Frame::Frame(const wxString& title, const wxPoint& pos, const wxSize& size) : wx
 	menuBar->Append(menuFile, "&File");
 	menuBar->Append(menuHelp, "&Help");
 
-	fileList = new FileList(panel);
+	fileList = new FileList(panel, iFrame);
 	DropTarget *dp = new DropTarget(fileList);
 	fileList->SetDropTarget(dp);
 

@@ -15,15 +15,22 @@
 #define IMAGEPANEL_H
 #include <wx/wx.h>
 
-class ImagePanel : wxPanel {
+class ImagePanel : public wxPanel {
 public:
 	ImagePanel(wxFrame* parent, wxString file, wxBitmapType format);
     ImagePanel(const ImagePanel& orig);
+	void loadFile(wxString file, wxBitmapType format);
 	wxBitmap image;
     virtual ~ImagePanel();
 private:
-
+	void paintEvent(wxPaintEvent & evt);
+    void paintNow();
+    void render(wxDC& dc);
+	DECLARE_EVENT_TABLE()
 };
 
+enum {
+	IMAGE_PANEL = 3
+};
 #endif /* IMAGEPANEL_H */
 

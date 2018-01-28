@@ -15,13 +15,16 @@
 #define FILELIST_H
 #include <wx/wx.h>
 #include <wx/listctrl.h>
+#include "ImageFrame.h"
 
 class FileList : public wxListCtrl {
 public:
-	FileList(wxWindow *parent);
+	FileList(wxWindow *parent, ImageFrame *imageFrame);
 private:
 	void OnItemSelected(wxListEvent& event);
+	ImageFrame *imageFrame;
 	wxDECLARE_EVENT_TABLE(); 
+
 };
 
 enum {
