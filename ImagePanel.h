@@ -13,11 +13,12 @@
 
 #ifndef IMAGEPANEL_H
 #define IMAGEPANEL_H
+#include "image.h"
 #include <wx/wx.h>
 
 class ImagePanel : public wxPanel {
 public:
-	ImagePanel(wxWindow* parent, wxString file, wxBitmapType format);
+	ImagePanel(wxWindow* parent, Image image);
 	void loadFile(wxString file, wxBitmapType format);
 	wxBitmap image;
 private:

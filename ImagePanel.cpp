@@ -12,10 +12,10 @@
  */
 
 #include "ImagePanel.h"
+#include "Image.h"
 #include <wx/wx.h>
 
-ImagePanel::ImagePanel(wxWindow* parent, wxString file, wxBitmapType format) : wxPanel(parent, -1, wxPoint(1,1), wxSize(500,500), -1, "test") {
-	image.LoadFile(file, format);
+ImagePanel::ImagePanel(wxWindow* parent, Image image) : wxPanel(parent, -1, wxPoint(1,1), wxSize(image.GetWidth(), image.GetHeight()), wxTAB_TRAVERSAL, "image"), image(image) {
 	this->SetSize(wxSize(image.GetWidth(), image.GetHeight()));
 	std::cout << "construct: " << this->GetSize().GetWidth() << std::endl;
 }
