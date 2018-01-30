@@ -7,6 +7,7 @@
       <itemPath>DropTarget.h</itemPath>
       <itemPath>FileList.h</itemPath>
       <itemPath>Frame.h</itemPath>
+      <itemPath>Image.h</itemPath>
       <itemPath>ImageFrame.h</itemPath>
       <itemPath>ImagePanel.h</itemPath>
       <itemPath>app.h</itemPath>
@@ -21,6 +22,7 @@
       <itemPath>DropTarget.cpp</itemPath>
       <itemPath>FileList.cpp</itemPath>
       <itemPath>Frame.cpp</itemPath>
+      <itemPath>Image.cpp</itemPath>
       <itemPath>ImageFrame.cpp</itemPath>
       <itemPath>ImagePanel.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -49,9 +51,8 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include</pElem>
-            <pElem>../../../../../wxWidgets/github/include</pElem>
-            <pElem>../../../../../wxWidgets/github/lib/gcc_dll/mswu</pElem>
+            <pElem>../../../../wxWidgets/github/lib/gcc_dll/mswu</pElem>
+            <pElem>../../../../wxWidgets/github/include</pElem>
           </incDir>
           <preprocessorList>
             <Elem>SFML_STATIC</Elem>
@@ -61,17 +62,9 @@
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/lib</pElem>
-            <pElem>../../../../../wxWidgets/github/lib/gcc_dll</pElem>
+            <pElem>../../../../wxWidgets/github/lib/gcc_dll</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>sfml-graphics-s-d</linkerLibLibItem>
-            <linkerLibLibItem>sfml-window-s-d</linkerLibLibItem>
-            <linkerLibLibItem>sfml-system-s-d</linkerLibLibItem>
-            <linkerLibLibItem>freetype</linkerLibLibItem>
-            <linkerLibLibItem>jpeg</linkerLibLibItem>
-            <linkerLibLibItem>opengl32</linkerLibLibItem>
-            <linkerLibLibItem>winmm</linkerLibLibItem>
             <linkerLibLibItem>wxmsw31u_core</linkerLibLibItem>
             <linkerLibLibItem>wxbase31u</linkerLibLibItem>
             <linkerLibLibItem>wxtiff</linkerLibLibItem>
@@ -104,6 +97,10 @@
       <item path="Frame.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Frame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Image.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Image.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ImageFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -151,6 +148,10 @@
       <item path="Frame.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Frame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Image.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Image.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ImageFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>

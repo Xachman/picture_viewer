@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/DropTarget.o \
 	${OBJECTDIR}/FileList.o \
 	${OBJECTDIR}/Frame.o \
+	${OBJECTDIR}/Image.o \
 	${OBJECTDIR}/ImageFrame.o \
 	${OBJECTDIR}/ImagePanel.o \
 	${OBJECTDIR}/main.o
@@ -81,6 +82,11 @@ ${OBJECTDIR}/Frame.o: Frame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Frame.o Frame.cpp
+
+${OBJECTDIR}/Image.o: Image.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Image.o Image.cpp
 
 ${OBJECTDIR}/ImageFrame.o: ImageFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}

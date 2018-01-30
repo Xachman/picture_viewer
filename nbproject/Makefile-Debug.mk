@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/DropTarget.o \
 	${OBJECTDIR}/FileList.o \
 	${OBJECTDIR}/Frame.o \
+	${OBJECTDIR}/Image.o \
 	${OBJECTDIR}/ImageFrame.o \
 	${OBJECTDIR}/ImagePanel.o \
 	${OBJECTDIR}/main.o
@@ -57,7 +58,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/lib -L../../../../../wxWidgets/github/lib/gcc_dll -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lfreetype -ljpeg -lopengl32 -lwinmm -lwxmsw31u_core -lwxbase31u -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxexpat -lwxregexu -lgdi32 -lcomctl32 -lole32 -luuid -loleaut32 -lcomdlg32 -lwinspool
+LDLIBSOPTIONS=-L../../../../wxWidgets/github/lib/gcc_dll -lwxmsw31u_core -lwxbase31u -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxexpat -lwxregexu -lgdi32 -lcomctl32 -lole32 -luuid -loleaut32 -lcomdlg32 -lwinspool
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -70,32 +71,37 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/picture_viewer.exe: ${OBJECTFILES}
 ${OBJECTDIR}/DropTarget.o: DropTarget.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DropTarget.o DropTarget.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DropTarget.o DropTarget.cpp
 
 ${OBJECTDIR}/FileList.o: FileList.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FileList.o FileList.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FileList.o FileList.cpp
 
 ${OBJECTDIR}/Frame.o: Frame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Frame.o Frame.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Frame.o Frame.cpp
+
+${OBJECTDIR}/Image.o: Image.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Image.o Image.cpp
 
 ${OBJECTDIR}/ImageFrame.o: ImageFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ImageFrame.o ImageFrame.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ImageFrame.o ImageFrame.cpp
 
 ${OBJECTDIR}/ImagePanel.o: ImagePanel.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ImagePanel.o ImagePanel.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ImagePanel.o ImagePanel.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../libs/SFML-2.4.2-windows-gcc-6.1.0-mingw-32-bit/SFML-2.4.2/include -I../../../../../wxWidgets/github/include -I../../../../../wxWidgets/github/lib/gcc_dll/mswu -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -DSFML_STATIC -D__UNICODE -D__WXMSW__ -I../../../../wxWidgets/github/lib/gcc_dll/mswu -I../../../../wxWidgets/github/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
