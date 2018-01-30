@@ -14,27 +14,28 @@
 #include "ImagePanel.h"
 #include <wx/wx.h>
 
-ImagePanel::ImagePanel(wxFrame* parent, wxString file, wxBitmapType format) : wxPanel(parent) {
+ImagePanel::ImagePanel(wxWindow* parent, wxString file, wxBitmapType format) : wxPanel(parent, -1, wxPoint(1,1), wxSize(500,500), -1, "test") {
 	image.LoadFile(file, format);
+	this->SetSize(wxSize(image.GetWidth(), image.GetHeight()));
+	std::cout << "construct: " << this->GetSize().GetWidth() << std::endl;
 }
 void ImagePanel::loadFile(wxString file, wxBitmapType format) {
+	std::cout << "lfsize: " << this->GetSize().GetWidth() << std::endl;
 	image.LoadFile(file, format);
 }
-ImagePanel::ImagePanel(const ImagePanel& orig) {
-}
 
-ImagePanel::~ImagePanel() {
-}
 
 void ImagePanel::paintEvent(wxPaintEvent & evt)
 {
     // depending on your system you may need to look at double-buffered dcs
+	std::cout << "pesize: " << this->GetSize().GetWidth() << std::endl;
     wxPaintDC dc(this);
     render(dc);
 }
 void ImagePanel::paintNow()
 {
     // depending on your system you may need to look at double-buffered dcs
+	std::cout << "psize: " << this->GetSize().GetWidth() << std::endl;
     wxClientDC dc(this);
     render(dc);
 }
@@ -42,4 +43,5 @@ void ImagePanel::paintNow()
 void ImagePanel::render(wxDC&  dc)
 {
     dc.DrawBitmap( image, 0, 0, false );
+	std::cout << "size: " << this->GetSize().GetWidth() << std::endl;
 }

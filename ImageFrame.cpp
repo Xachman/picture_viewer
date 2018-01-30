@@ -13,18 +13,25 @@
 
 #include "ImageFrame.h"
 #include <wx/display.h>
+
 ImageFrame::ImageFrame(wxDisplay *display) : wxFrame(NULL, wxID_ANY, "Image", wxPoint(50,50), wxSize(800, 600)) {
 	// then simply create like this
 	wxInitAllImageHandlers();
- 
-
+	
+	wxPanel *canvasPanel = new wxPanel(this);
+	canvasPanel->SetBackgroundColour(wxColour(*wxBLACK));
     wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
-	wxSizer* s2 = new wxBoxSizer(wxVERTICAL);
-	s2->Add(imagePanel, 1, wxALIGN_CENTER_HORIZONTAL);
-	imagePanel = new ImagePanel( this, "test.png", wxBITMAP_TYPE_PNG);
+	imagePanel = new ImagePanel( canvasPanel, "./test.png", wxBITMAP_TYPE_PNG);
+	sizer->Add(canvasPanel, 1, wxEXPAND);
+	wxBoxSizer *sizer2 = new wxBoxSizer(wxVERTICAL); 
 
-	sizer->Add(s2, 1, wxEXPAND);
+	sizer2->AddStretchSpacer();
+	std::cout << "image before: " << imagePanel->GetSize().GetWidth() << std::endl;
+	sizer2->Add(imagePanel, 1, wxALIGN_CENTER);
+	sizer2->AddStretchSpacer();
+	canvasPanel->SetSizer(sizer2);
  	this->SetSizer(sizer);
+	std::cout << "image after: " << imagePanel->GetSize().GetWidth() << std::endl;
 	this->Show();
 	this->ShowFullScreen(true);
 }

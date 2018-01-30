@@ -26,8 +26,7 @@ BEGIN_EVENT_TABLE(ImagePanel, wxPanel)
  */
  
 // catch paint events
-	EVT_PAINT(ImagePanel::paintEvent)
- 
+	EVT_PAINT(ImagePanel::paintEvent) 
 END_EVENT_TABLE()
 wxBEGIN_EVENT_TABLE(Frame, wxFrame)
 	EVT_MENU(ID_Hello, Frame::OnHello)
