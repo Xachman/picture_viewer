@@ -31,14 +31,11 @@ ImageFrame::ImageFrame(wxDisplay *display) : wxFrame(NULL, wxID_ANY, "Image", wx
 	this->ShowFullScreen(true);
 }
 void ImageFrame::updateImage(std::string path) {
-	std::cout << "udpate image with: " << path << std::endl;
-	imagePanel = new ImagePanel( this, Image(path.c_str()));
-    wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
-	sizer->AddStretchSpacer();
-	sizer->Add(imagePanel, 1, wxALIGN_CENTER);
-	sizer->AddStretchSpacer();
- 	this->SetSizer(sizer);
+	std::cout << "udpate image with: " << path << std::endl;	
 	this->Refresh();
+	delete imagePanel;
+	imagePanel = new ImagePanel( this, Image(path.c_str()));
+	this->GetSizer()->Add(imagePanel, 1, wxCENTER);
 }
 ImageFrame::ImageFrame(const ImageFrame& orig) {
 }
