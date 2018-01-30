@@ -35,7 +35,12 @@ void ImageFrame::updateImage(std::string path) {
 	this->Refresh();
 	delete imagePanel;
 	imagePanel = new ImagePanel( this, Image(path.c_str()));
-	this->GetSizer()->Add(imagePanel, 1, wxCENTER);
+	this->GetSizer()->Clear(true);
+	this->GetSizer()->AddStretchSpacer();
+	this->GetSizer()->Add(imagePanel, 1, wxALIGN_CENTER);
+	this->GetSizer()->AddStretchSpacer();
+	this->GetSizer()->Layout();
+
 }
 ImageFrame::ImageFrame(const ImageFrame& orig) {
 }
