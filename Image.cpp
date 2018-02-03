@@ -27,6 +27,9 @@ Image::Image(const wxString &name) : path(name) {
 	
 }
 
+Image::Image(const wxImage& image) : wxBitmap(image) {
+	
+}
 Image::Image(const Image& orig) {
 }
 

@@ -22,10 +22,11 @@ public:
     ImageFrame(wxDisplay *display);
     ImageFrame(const ImageFrame& orig);
 	ImagePanel * imagePanel;
+	wxDisplay *display;
 	void updateImage(std::string path);
     virtual ~ImageFrame();
 private:
-
+	Image setImageScale(Image image);
 };
 
 #endif /* IMAGEFRAME_H */

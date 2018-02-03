@@ -18,6 +18,7 @@ class Image : public wxBitmap {
 public:
     Image(const wxString &name);
     Image(const Image& orig);
+	Image(const wxImage &image);
 	wxString path;
     virtual ~Image();
 private:
