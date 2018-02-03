@@ -42,7 +42,7 @@ wxIMPLEMENT_APP(App);
 
 bool App::OnInit()
 {
-	Frame *frame = new Frame("Hello World", wxPoint(50,50), wxSize(450, 340));
+	Frame *frame = new Frame("Hello World", wxPoint(50,50), wxSize(-1, -1));
 	frame->Show( true );
 	return true;
 };

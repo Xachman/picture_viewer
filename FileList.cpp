@@ -19,7 +19,7 @@
 #include <string>
 
 FileList::FileList(wxWindow *parent, ImageFrame *imageFrame): wxListCtrl(parent, LIST_CTRL, wxPoint(-1, -1), 
-    wxSize(400, 200), wxLC_REPORT) {
+    wxSize(-1, -1), wxLC_REPORT) {
 	wxListItem col0;
     	col0.SetId(0);
         col0.SetText( _("Name") );

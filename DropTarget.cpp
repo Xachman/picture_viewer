@@ -27,11 +27,8 @@ DropTarget::~DropTarget() {
 bool DropTarget::OnDropFiles(wxCoord x, wxCoord y, const wxArrayString& filenames) 
 {
 	size_t nFiles = filenames.GetCount();
-    std::cout << (int)nFiles << std::endl;
 
 	for ( size_t n = 0; n < nFiles; n++ ) {
-		std::cout << filenames[n] << std::endl;
-		std::cout << this->owner->GetItemCount() << std::endl;
 		wxListItem item;
             item.SetId(this->owner->GetItemCount()+1);
             item.SetText( filenames[n] );

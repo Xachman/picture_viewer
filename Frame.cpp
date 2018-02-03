@@ -33,6 +33,8 @@ Frame::Frame(const wxString& title, const wxPoint& pos, const wxSize& size) : wx
 	DropTarget *dp = new DropTarget(fileList);
 	fileList->SetDropTarget(dp);
 
+
+
 	SetMenuBar(menuBar);
     CreateStatusBar();
 	SetStatusText("Welcome to x");	
